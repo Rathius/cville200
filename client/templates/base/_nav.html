@@ -1,0 +1,45 @@
+<template name="nav">
+
+	<!-- Dropdown Structure -->
+	<ul id="dropdown1" class="dropdown-content">
+		<li><a href="#!">Notable Places</a></li>
+		<li class="divider"></li>
+		<li><a href="#!">Downtown Tour</a></li>
+		<li><a href="#!">Driving Tour</a></li>
+		<li><a href="#!">Virtual Tour</a></li>
+	</ul>
+	
+	<ul id="dropdown2" class="dropdown-content">
+		<li><a href="#!">Notable Places</a></li>
+		<li class="divider"></li>
+		<li><a href="#!">Downtown Tour</a></li>
+		<li><a href="#!">Driving Tour</a></li>
+		<li><a href="#!">Virtual Tour</a></li>
+	</ul>
+
+	<header>
+		<nav class="blue lighten-1" role="navigation">
+			<div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo">Campbellsville, Ky, USA</a>
+				<ul class="right hide-on-med-and-down">
+					<li><a href="/">Home</a></li>
+					<li><a href="/events">Events</a></li>
+					<li><a href="/history">History</a></li>
+					<li><a href="/map">Map</a></li>
+					<!-- Dropdown Trigger -->
+					<li><a class="dropdown-button" href="#!" data-activates="dropdown2">More To Do<i class="material-icons right">arrow_drop_down</i></a></li>
+				</ul>
+		
+				<ul id="nav-mobile" class="side-nav">
+					<li><a href="/">Home</a></li>
+					<li><a href="/events">Events</a></li>
+					<li><a href="/history">History</a></li>
+					<li><a href="/map">Map</a></li>
+					<!-- Dropdown Trigger -->
+					<li><a class="dropdown-button" href="#!" data-activates="dropdown1">More To Do<i class="material-icons right">arrow_drop_down</i></a></li>
+				</ul>
+				<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+			</div>
+		</nav>
+	</header>
+
+</template>
