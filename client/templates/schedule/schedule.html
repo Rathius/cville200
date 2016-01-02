@@ -1,5 +1,28 @@
 <template name="schedule">
 
-    <h3>Schedule of Events</h3>
+    <div class="row">
+		<div class="col s12">
+			<h1 class="center-align">Schedule of Events</h1>
+		</div>
+		<div class="col s8 offset-s2 event-list">
+			<ul class="collapsible popout" data-collapsible="accordion">
+				{{#each schedule}}
+					<li>
+						<div class="collapsible-header">
+							<i class="material-icons">event</i>
+								{{scheduleTitle}}
+						</div>
+						<div class="collapsible-body">
+							<p>{{scheduleStartDate}} - {{scheduleEndDate}}<br />
+								{{scheduleLoc}}   <a class="btn-floating waves-effect waves-light green go-map" href="/event/{{_id}}"><i class="material-icons">forward</i></a></p>
+							<p>{{scheduleInfo}}</p>
+						</div>
+					</li>
+				{{else}}
+					<p class="center-align">There are no events</p>
+				{{/each}}
+			</ul>
+		</div>
+	</div>
 
 </template>
