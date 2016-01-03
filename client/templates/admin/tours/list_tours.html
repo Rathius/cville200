@@ -1,5 +1,38 @@
 <template name="list_tours">
 
-    <h3>List All Tours Page</h3>
+    <div class="row">
+        <div class="col s12">
+            <h4>Tour List</h4>
+            <br><br>
+            <table class="responsive-table highlight">
+                <thead>
+                    <tr>
+                        <th data-field="name">Tour</th>
+                        <th data-field="date">Stop</th>
+                        <th data-field="location">Location</th>
+                        <th colspan="2">Action</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    {{#each tour}}
+                        <tr>
+                            <td><p>{{tourTitle}}</p></td>
+                            <td><p>{{toursAddress}}</p></td>
+                            <td><p>{{toursLat}} | {{toursLng}}</p></td>
+                            <td><a class="waves-effect waves-light btn"><i class="material-icons left edit-event">mode_edit</i>Edit</a> <a class="waves-effect waves-light btn"><i class="material-icons left red delete-event">delete</i>Delete</a></td>
+                        </tr>
+                    {{else}}
+                        <tr>
+                            <td colspan="">
+                                There are no tours
+                            </td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
 
 </template>
+

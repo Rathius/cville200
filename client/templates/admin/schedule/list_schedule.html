@@ -1,0 +1,39 @@
+<template name="list_schedule_item">
+
+    <div class="row">
+        <div class="col s12">
+            <h4>Event List</h4>
+            <br><br>
+            <table class="responsive-table highlight">
+                <thead>
+                    <tr>
+                        <th data-field="name">Name</th>
+                        <th data-field="date">Date(s)</th>
+                        <th data-field="location">Location</th>
+                        <th data-field="description" colspan="2">Info</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    {{#each schedule}}
+                        <tr>
+                            <td><p>{{scheduleTitle}}</p></td>
+                            <td><p>{{scheduleStartDate}} {{#if scheduleEndDate}}- {{scheduleEndDate}}{{/if}}</p></td>
+                            <td><p>{{scheduleLoc}}</p></td>
+                            <td><p class="truncate">{{scheduleInfo}}</p></td>
+                            <td><a class="waves-effect waves-light btn"><i class="material-icons left edit-event">mode_edit</i>Edit</a> <a class="waves-effect waves-light btn"><i class="material-icons left red delete-event">delete</i>Delete</a></td>
+                        </tr>
+                    {{else}}
+                        <tr>
+                            <td colspan="">
+                                There are no events
+                            </td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</template>
+

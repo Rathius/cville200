@@ -5,17 +5,26 @@
             <div class="col s12 m4 l3 admin-sidebar">
                 <h3 class="center-align">Admin Dashboard</h3>
                 <hr />
-                <ul>
-                    <li>Add An Event</li>
-                    <li>Edit An Event</li>
-                    <li>Add A Tour</li>
-                    <li>Edit A Tour</li>
-                </ul>
+                <div class="col s12 admin-buttons">
+                    <a class="waves-effect waves-light btn"><i class="material-icons left">add</i>Add Event</a>
+                    <hr />
+                    <a class="waves-effect waves-light btn"><i class="material-icons left">add</i>Add Tour</a>
+                    <hr />
+                </div>
             </div>
                 
             <div class="col s12 m8 l9 admin-content">
+                <div class="col s12 admin-schedule">
+                    
+                    {{> list_schedule_item}}
+                        
+                </div>
                 
-                <!--{{> yield}}-->
+                <div class="col s12 admin-tours">
+                    
+                    {{> list_tours}}
+                    
+                </div>
                 
             </div>
         </div>

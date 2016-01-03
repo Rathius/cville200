@@ -96,3 +96,12 @@ form {
     color: #000 !important;
 }
 
+.admin-sidebar {
+    border-right: 1px solid black;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.admin-schedule, .admin-tours {
+    border-left: 1px solid black;
+    border-radius: 10px 0px 0px 10px;
+}
