@@ -1,5 +1,43 @@
 <template name="schedule_item">
 
-    <h3>Schedule Item Page</h3>
+	<div class="container event-page-container">
+		<div class="row">
+			<div class="col s12">
+				<h2 class="center-align">{{scheduleTitle}}</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s3 event-info z-depth-1">
+				<div class="col s12">
+					<h5>{{scheduleTitle}}</h5>
+				</div>
+				<div class="col s12">
+					<h6>{{scheduleStartDate}}
+						
+						 | {{scheduleEndDate}}
+							
+					</h6>
+					<p><strong>{{scheduleLoc}}</strong></p>		
+				</div>
+			</div>
+			<div class="col s8 offset-s1 event-description z-depth-1">
+				<h4>Event Information</h4>
+				{{scheduleInfo}}
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s10 offset-s1">
+				<div class="map-container">
+					{{#unless geolocationError}}
+						{{> googleMap name="map" options=mapOptions}}
+					{{else}}
+						Geolocation Failed: {{geolocationError}}
+					{{/unless}}
+				</div>
+			</div>
+		</div>
+	</div>
+				
+
 
 </template>

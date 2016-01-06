@@ -2,25 +2,24 @@
 
     <div class="container promo admin-dashboard">
         <div class="row">
-            <div class="col s12 m4 l3 admin-sidebar">
-                <h3 class="center-align">Admin Dashboard</h3>
+            <div class="col s12 m5 l4 admin-sidebar">
+                <h5 class="center-align">Admin Dashboard</h5>
                 <hr />
-                <div class="col s12 admin-buttons">
-                    <a class="waves-effect waves-light btn"><i class="material-icons left">add</i>Add Event</a>
+                <div class="col s12 admin-buttons center-align">
+                    <a href="add_schedule_item" class="waves-effect waves-light btn"><i class="material-icons left">add</i>Add Event</a>
                     <hr />
                     <a class="waves-effect waves-light btn"><i class="material-icons left">add</i>Add Tour</a>
-                    <hr />
                 </div>
             </div>
                 
-            <div class="col s12 m8 l9 admin-content">
-                <div class="col s12 admin-schedule">
+            <div class="col s12 m7 l8 admin-content">
+                <div class="col s12 admin-schedule z-depth-1">
                     
-                    {{> list_schedule_item}}
+                    {{> list_schedule}}
                         
                 </div>
                 
-                <div class="col s12 admin-tours">
+                <div class="col s12 admin-tours z-depth-1">
                     
                     {{> list_tours}}
                     

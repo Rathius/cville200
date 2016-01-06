@@ -1,4 +1,4 @@
-<template name="list_schedule_item">
+<template name="list_schedule">
 
     <div class="row">
         <div class="col s12">
@@ -8,9 +8,7 @@
                 <thead>
                     <tr>
                         <th data-field="name">Name</th>
-                        <th data-field="date">Date(s)</th>
-                        <th data-field="location">Location</th>
-                        <th data-field="description" colspan="2">Info</th>
+                        <th data-field="action">Action</th>
                     </tr>
                 </thead>
                 
@@ -18,14 +16,79 @@
                     {{#each schedule}}
                         <tr>
                             <td><p>{{scheduleTitle}}</p></td>
-                            <td><p>{{scheduleStartDate}} {{#if scheduleEndDate}}- {{scheduleEndDate}}{{/if}}</p></td>
-                            <td><p>{{scheduleLoc}}</p></td>
-                            <td><p class="truncate">{{scheduleInfo}}</p></td>
-                            <td><a class="waves-effect waves-light btn"><i class="material-icons left edit-event">mode_edit</i>Edit</a> <a class="waves-effect waves-light btn"><i class="material-icons left red delete-event">delete</i>Delete</a></td>
+                            <td>
+								<!-- Modal Trigger -->
+								<a class="btn-floating waves-effect waves-light btn modal-trigger edit-event" href="#modal1"><i class="material-icons left">mode_edit</i></a>
+								
+								<!-- Modal Structure -->
+								<div id="modal1" class="modal bottom-sheet">
+									<div class="modal-content">
+										<h4>Edit Event</h4>
+										<div class="col s12">
+											<h2 class="center-align text-shadow">Create Event</h2>
+											<form class="col s8 offset-s2 edit_schedule_item_form">
+												<div class="row">
+													<div class="input-field col s12">
+														<input id="scheduleTitle" name="scheduleTitle" type="text" value="{{scheduleTitle}}">
+														<label for="scheduleTitle">Event Title</label>
+													</div>
+												</div>
+												<div class="row">
+													<div class="input-field col s12">
+														<input type="text" id="scheduleStartDate" name="scheduleStartDate" value="{{scheduleStartDate}}">
+														<label for="scheduleStartDate">Event Start Date</label>
+													</div>
+												</div>
+												<div class="row">
+													<div class="input-field col s12">
+														<input type="text" id="scheduleEndDate" name="scheduleEndDate" value="{{scheduleEndDate}}">
+														<label for="scheduleEndDate">Event End Date</label>
+													</div>
+												</div>
+												<div class="row">
+													<div class="input-field col s12">
+														<input type="text" id="scheduleLoc" name="scheduleLoc" value="{{scheduleLoc}}">
+														<label for="scheduleLoc">Event Location</label>
+													</div>
+												</div>
+												<div class="row">
+													<div class="input-field col s12">
+														<textarea id="scheduleInfo" name="scheduleInfo" class="materialize-textarea" value="{{scheduleInfo}}"></textarea>
+														<label for="scheduleInfo">Event Description</label>
+													</div>					
+												</div>
+												<div class="row">
+													<div class="input-field col s12">
+														<input type="text" id="scheduleLat" name="scheduleLat" value="{{scheduleLat}}">
+														<label for="scheduleLat">Event Latitude</label>
+													</div>
+												</div>
+												<div class="row">
+													<div class="input-field col s12">
+														<input type="text" id="scheduleLng" name="scheduleLng" value="{{scheduleLng}}">
+														<label for="scheduleLng">Event Longitude</label>
+													</div>
+												</div>
+												<div class="row">
+													<div class="input-field col s12">
+														<button class="btn waves-effect waves-light" type="submit">Update
+								<i class="material-icons right">send</i>
+														</button>
+														
+													</div>
+												</div>
+											</form>
+										</div>
+									</div>
+										<div class="modal-footer">
+										<a href="/admin/events" class="btn-floating btn waves-effect waves-light yellow darken-3"><i class="material-icons left">close</i></a>									</div>
+								</div>
+								<p><a class="btn-floating waves-effect waves-light btn red"><i class="material-icons red delete-event">delete</i></a></p>
+							</td>
                         </tr>
                     {{else}}
                         <tr>
-                            <td colspan="">
+                            <td colspan="4">
                                 There are no events
                             </td>
                         </tr>
