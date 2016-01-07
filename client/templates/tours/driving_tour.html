@@ -1,5 +1,33 @@
 <template name="driving_tour">
-
-    <h3>Driving Tour</h3>
+		
+	<div class="container">
+		<div class="row">
+			<div class="col s12">
+				<h3 class="center-align">Driving Tour</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s12 l4">
+				<a class="waves-effect waves-light btn green start-driving center-align"><i class="material-icons left">drive_eta</i>Start</a>
+			</div>
+			<div class="col s12 l4">
+				<a class="waves-effect waves-light red btn stop-driving center-align"><i class="material-icons left">pause</i>Pause</a>
+			</div>
+			<div class="col s12 l4">
+				<a class="waves-effect waves-light red btn stop-driving center-align"><i class="material-icons left">stop</i>Stop</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s10 offset-s1">
+				<div class="map-container">
+					{{#unless geolocationError}}
+						{{> googleMap name="map" options=mapOptions}}
+					{{else}}
+						Geolocation Failed: {{geolocationError}}
+					{{/unless}}
+				</div>
+			</div>
+		</div>
+	</div>
 
 </template>

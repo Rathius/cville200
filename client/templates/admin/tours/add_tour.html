@@ -1,5 +1,61 @@
 <template name="add_tour">
 
-    <h3>Add A Tour Page</h3>
+    <div class="container">	
+		<div class="row">
+			<h2 class="center-align text-shadow">Create Event</h2>
+			<form class="col s8 offset-s2 add_schedule_item_form">
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="scheduleTitle" name="scheduleTitle" type="text">
+						<label for="scheduleTitle">Event Title</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<input type="text" id="scheduleStartDate" name="scheduleStartDate" >
+						<label for="scheduleStartDate">Event Start Date</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<input type="text" id="scheduleEndDate" name="scheduleEndDate">
+						<label for="scheduleEndDate">Event End Date</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<input type="text" id="scheduleLoc" name="scheduleLoc">
+						<label for="scheduleLoc">Event Location</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<textarea id="scheduleInfo" name="scheduleInfo" class="materialize-textarea"></textarea>
+						<label for="scheduleInfo">Event Description</label>
+					</div>					
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<input type="text" id="scheduleLat" name="scheduleLat">
+						<label for="scheduleLat">Event Latitude</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<input type="text" id="scheduleLng" name="scheduleLng">
+						<label for="scheduleLng">Event Longitude</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<button class="btn waves-effect waves-light" type="submit">Submit
+<i class="material-icons right">send</i>
+						</button>
+						<a href="/admin" class="btn waves-effect waves-light yellow darken-3">Go Back<i class="material-icons left">arrow_back</i></a>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
 
 </template>

@@ -7,7 +7,6 @@
             <table class="responsive-table highlight">
                 <thead>
                     <tr>
-                        <th data-field="name">Tour</th>
                         <th data-field="date">Stop</th>
                         <th data-field="location">Location</th>
                         <th colspan="2">Action</th>
@@ -15,11 +14,11 @@
                 </thead>
                 
                 <tbody>
-                    {{#each tour}}
+                    {{#each tours}}
                         <tr>
-                            <td><p>{{tourTitle}}</p></td>
-                            <td><p>{{toursAddress}}</p></td>
-                            <td><p>{{toursLat}} | {{toursLng}}</p></td>
+                            <td><p>{{tour.stopName}}</p></td>
+                            <td><p>{{tour.stopNum}}</p></td> 
+                            <td><p>{{tour.stopAddress}}</p></td>
                             <td><a class="waves-effect waves-light btn"><i class="material-icons left edit-event">mode_edit</i>Edit</a> <a class="waves-effect waves-light btn"><i class="material-icons left red delete-event">delete</i>Delete</a></td>
                         </tr>
                     {{else}}
