@@ -130,3 +130,28 @@ form {
 	margin-top: 15px;
 }
 
+.swag-item {
+	background-color: rgba(255, 243, 224, 0.8) !important;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border: none;
+}
+
+.swag-item-header {
+	background-color: rgba(177, 158, 126, 0.8) !important;
+	border-radius: 10px;
+	margin-bottom: 5px;
+}
+
+.swag-item-body {
+	background-color: rgba(255, 243, 224, 0.5) !important;
+	border-radius: 10px;
+	margin-bottom: 5px;
+}
+
+.swag-item-price {
+	background-color: rgba(239, 239, 239, 0.5);
+	border-radius: 10px;
+	margin-bottom: 5px;
+}
