@@ -1,12 +1,8 @@
-
-
 Template.list_schedule.helpers({
   	schedule: function() {
   		return Schedule.find({});
 	}
 });
-
-
 
 Template.add_schedule_item.events({
 	'submit .add_schedule_item_form': function(event){
@@ -45,7 +41,7 @@ Template.list_schedule.events({
 	'click .edit-event': function(event){
 		$('#modal1').openModal();
 	},
-    'submit .edit_event_form': function(event){
+    'submit .edit_schedule_item_form': function(event){
 		var title = event.target.scheduleTitle.value;
 		var startDate = event.target.scheduleStartDate.value;
 		var endDate = event.target.scheduleEndDate.value;
@@ -55,7 +51,7 @@ Template.list_schedule.events({
 		var lng = event.target.scheduleLng.value;
         
         
-        Events.update({
+        Schedule.update({
             _id: this._id
         },{
             $set:{
@@ -69,23 +65,27 @@ Template.list_schedule.events({
             }
         });
         
+
+        
         toastr.success("Event Updated");
-	    Router.go('/admin');
+        $('#editEventModal').closeModal();
+        Router.go('/admin');
 	    
 	    // Prevent Submit
 	    return false;
-	}, 
-});
-
-/*Template.event_list.helpers({
-    'click .delete_event': function(event){
+	},
+	'click .delete-event': function(event){
         if(confirm("Are you sure?")){
-            Events.remove(this._id);
+            Schedule.remove(this._id);
             toastr.success("Event Deleted");
             
             // Prevent submit
             return false;
         };
-    }
+    },
+	'click .close-button': function(event){
+		$('#modal1').closeModal();
+		Router.go('/admin');
+	}
 });
-*/
+

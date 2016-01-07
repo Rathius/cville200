@@ -7,27 +7,31 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col s3 event-info z-depth-1">
+			<div class="col s12 m4 l3 event-info z-depth-2">
 				<div class="col s12">
-					<h5>{{scheduleTitle}}</h5>
+					<h6><strong>{{scheduleTitle}}</strong></h6>
 				</div>
 				<div class="col s12">
-					<h6>{{scheduleStartDate}}
-						
-						 | {{scheduleEndDate}}
-							
-					</h6>
+					<h6>{{scheduleStartDate}} | {{scheduleEndDate}}</h6>
 					<p><strong>{{scheduleLoc}}</strong></p>		
 				</div>
 			</div>
-			<div class="col s8 offset-s1 event-description z-depth-1">
+			
+			<div class="col s12 m7 l8 offset-s1 offset-m1 offset-l1 event-description z-depth-2">
 				<h4>Event Information</h4>
 				{{scheduleInfo}}
 			</div>
 		</div>
 		<div class="row">
+			<div class="col s12 z-depth-2">
+				Buttons 
+				Go
+				Here
+			</div>
+		</div>
+		<div class="row">
 			<div class="col s10 offset-s1">
-				<div class="map-container">
+				<div class="map-container z-depth-2">
 					{{#unless geolocationError}}
 						{{> googleMap name="map" options=mapOptions}}
 					{{else}}
