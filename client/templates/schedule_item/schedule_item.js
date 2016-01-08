@@ -36,7 +36,7 @@ Template.schedule_item.onCreated(function() {
     });
 });
 
-<<<<<<< HEAD
+
 /*Template.schedule_item.events({
 	'click .get-directions': function(event){
 		geolocationError: function(event) {
@@ -79,6 +79,3 @@ Template.schedule_item.onCreated(function() {
 });
 */
 
-
-=======
->>>>>>> parent of 240bd81... small updates
