@@ -1,10 +1,15 @@
 
+
 var MAP_ZOOM = 15;
 
 Template.schedule_item.helpers({
 	schedule: function() {
   		return Schedule.findOne({_id: this._id});
 	},
+	/*geolocationError: function() {
+		var error = Geolocation.error();
+		return error && error.message;
+	},*/
 	mapOptions: function() {
 		/*var id = this._id;*/
 		var lat = Schedule.findOne({_id: this._id}).scheduleLat;
@@ -31,12 +36,49 @@ Template.schedule_item.onCreated(function() {
     });
 });
 
-Template.schedule_item.events({
-	'click .get-diretions': function(event){
-		geolocationError: function() {
+<<<<<<< HEAD
+/*Template.schedule_item.events({
+	'click .get-directions': function(event){
+		geolocationError: function(event) {
 			var error = Geolocation.error();
 			return error && error.message;
 		},
-		
+		mapOptions: function(event) {
+			var currentLocation = Geolocation.latLng();
+			var startPosition = Geolocation.position();
+			var destination = (Schedule.findOne({_id: this._id}).scheduleLat, Schedule.findOne({_id: this._id}).scheduleLng);
+			
+			var map = new google.maps.Map('map'),{
+				// get currentLocation and set map options
+				center: currentLocation,
+				scrollwheel: false,
+				zoom: 7
+			};
+			
+			var directionsDisplay = new google.maps.DirectionsRenderer({
+				map: map
+			});
+			
+			// Set destination, origin and travel mode.
+			var request = {
+				destination: destination,
+				origin: startPosition,
+				travelMode: google.maps.TravelMode.DRIVING
+			};
+			
+			// Pass the directions request to the directions service.
+			var directionsService = new google.maps.DirectionsService();
+			directionsService.route(request, function(response, status) {
+				if (status == google.maps.DirectionsStatus.OK) {
+					// Disply the route on the map.
+					directionsDisplay.setDirections(response);
+				}
+			});
+		}
 	}
-})
+});
+*/
+
+
+=======
+>>>>>>> parent of 240bd81... small updates
