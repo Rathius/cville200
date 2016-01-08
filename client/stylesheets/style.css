@@ -34,6 +34,14 @@ main {
 	flex: 1 0 auto;
 }
 
+nav {
+	margin-bottom: 80px;
+}
+
+.brand-logo {
+	margin-top: 5px;
+}
+
 .map-container {
 	width: 800px;
 	max-width: 100%;
@@ -92,6 +100,7 @@ main {
 
 #index-banner h2 {
 	text-shadow: 0px 0px 3px black;
+	margin-top: -25px;
 }
 
 .page-footer {

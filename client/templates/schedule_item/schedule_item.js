@@ -1,15 +1,10 @@
 
-
 var MAP_ZOOM = 15;
 
 Template.schedule_item.helpers({
 	schedule: function() {
   		return Schedule.findOne({_id: this._id});
 	},
-	/*geolocationError: function() {
-		var error = Geolocation.error();
-		return error && error.message;
-	},*/
 	mapOptions: function() {
 		/*var id = this._id;*/
 		var lat = Schedule.findOne({_id: this._id}).scheduleLat;
@@ -36,3 +31,12 @@ Template.schedule_item.onCreated(function() {
     });
 });
 
+Template.schedule_item.events({
+	'click .get-diretions': function(event){
+		geolocationError: function() {
+			var error = Geolocation.error();
+			return error && error.message;
+		},
+		
+	}
+})
