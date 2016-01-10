@@ -33,13 +33,9 @@ Template.add_schedule_item.events({
 	}
 });
 
-/*Template.list_schedule.rendered=function() {
-	$('.modal-trigger').leanModal();
-};*/
-
 Template.list_schedule.events({
 	'click .edit-event': function(event){
-		$('#modal1').openModal();
+		$('#editEventModal').openModal();
 	},
     'submit .edit_schedule_item_form': function(event){
 		var title = event.target.scheduleTitle.value;
