@@ -1,68 +1,48 @@
+var mapZoom = 7;
 
+if (Meteor.isClient) {
+	Meteor.startup(function() {
+		GoogleMaps.load();
+	});
 
-var MAP_ZOOM = 15;
-
-Template.schedule_item.helpers({
-	schedule: function() {
-  		return Schedule.findOne({_id: this._id});
-	},
-	/*geolocationError: function() {
-		var error = Geolocation.error();
-		return error && error.message;
-	},*/
-	mapOptions: function() {
-		/*var id = this._id;*/
-		var lat = Schedule.findOne({_id: this._id}).scheduleLat;
-		var lng = Schedule.findOne({_id: this._id}).scheduleLng;
-		
-		// Initialize the map once we have the latLng
-		if (GoogleMaps.loaded() && lat && lng) {
-			return {
-				center: new google.maps.LatLng(lat, lng),
-				zoom: MAP_ZOOM
-			};
-		}
-	}
-});
-
-Template.schedule_item.onCreated(function() {
-	// We can use the `ready` callback to interact with the map API once the map is ready.
-    GoogleMaps.ready('map', function(map) {
-		// Add a marker to the map once it's ready
-		var marker = new google.maps.Marker({
-			position: map.options.center,
-			map: map.instance
-		});
-    });
-});
-
-
-/*Template.schedule_item.events({
-	'click .get-directions': function(event){
-		geolocationError: function(event) {
+	Template.schedule_item.helpers({
+		schedule: function() {
+	  		return Schedule.findOne({_id: this._id});
+		},
+		geolocationError: function() {
 			var error = Geolocation.error();
 			return error && error.message;
 		},
-		mapOptions: function(event) {
-			var currentLocation = Geolocation.latLng();
-			var startPosition = Geolocation.position();
-			var destination = (Schedule.findOne({_id: this._id}).scheduleLat, Schedule.findOne({_id: this._id}).scheduleLng);
-			
-			var map = new google.maps.Map('map'),{
-				// get currentLocation and set map options
-				center: currentLocation,
-				scrollwheel: false,
-				zoom: 7
-			};
-			
+		mapOptions: function() {
+			// Make sure the maps API has loaded
+			if (GoogleMaps.loaded()) {
+				return {
+					current: Geolocation.latLng(),
+					start: Geolocation.position(),
+					dest: (Schedule.findOne({_id: this._id}).scheduleLat, Schedule.findOne({_id: this._id}).scheduleLng),
+					
+					map = new google.maps.Map('map'),({
+						// get currentLocation and set map options
+						center: current,
+						zoom: mapZoom
+					});
+				}
+			}
+		}
+	});
+	
+	Template.schedule_item.onCreated(function() {
+		// We can use the `ready` callback to interact with the map API once the map is ready.
+	    GoogleMaps.ready('map', function(map) {
+			// Add a marker to the map once it's ready
 			var directionsDisplay = new google.maps.DirectionsRenderer({
-				map: map
-			});
-			
+					map.instance
+				});
+				
 			// Set destination, origin and travel mode.
 			var request = {
-				destination: destination,
-				origin: startPosition,
+				destination: dest,
+				origin: start,
 				travelMode: google.maps.TravelMode.DRIVING
 			};
 			
@@ -74,8 +54,17 @@ Template.schedule_item.onCreated(function() {
 					directionsDisplay.setDirections(response);
 				}
 			});
+	    });
+	});
+	
+	
+	/*Template.schedule_item.events({
+		'click .get-directions': function(){
+			geolocationError: function() {
+				var error = Geolocation.error();
+				return error && error.message;
+			},
+			
 		}
-	}
-});
-*/
-
+	});*/
+}

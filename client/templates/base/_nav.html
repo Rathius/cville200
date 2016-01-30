@@ -1,30 +1,5 @@
 <template name="nav">
 
-	<!-- Dropdown Structure -->
-	<ul id="dropdown1" class="dropdown-content">
-		<li><a href="/tour/downtown">Downtown Tour</a></li>
-		<li><a href="/tour/driving">Driving Tour</a></li>
-		<li><a href="/tour/virtual">Virtual Tour</a></li>
-	</ul>
-	
-	<ul id="dropdown2" class="dropdown-content">
-		<li><a href="/tour/downtown">Downtown Tour</a></li>
-		<li><a href="/tour/driving">Driving Tour</a></li>
-		<li><a href="/tour/virtual">Virtual Tour</a></li>
-	</ul>
-	
-	<ul id="dropdown3" class="dropdown-content">
-		<li><a href="/notable/people">Notable People</a></li>
-		<li><a href="/notable/places">Notable Places</a></li>
-		<li><a href="/notable/businesses">Notable Businesses</a></li>
-	</ul>
-	
-	<ul id="dropdown4" class="dropdown-content">
-		<li><a href="/notable/people">Notable People</a></li>
-		<li><a href="/notable/places">Notable Places</a></li>
-		<li><a href="/notable/businesses">Notable Businesses</a></li>
-	</ul>
-
 	<header>
 		<nav class="blue lighten-1" role="navigation">
 			<div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo"><img src="img/cville-city-seal-150x150.png" alt="Campbellsville City Seal" class="circle z-depth-2" /></a>
@@ -37,16 +12,34 @@
 					<!-- Dropdown Trigger -->
 					<li><a class="dropdown-button" href="#!" data-activates="dropdown2">More To Do<i class="material-icons right">arrow_drop_down</i></a></li>
 				</ul>
-		
-				<ul id="nav-mobile" class="side-nav">
-					<li><a href="/">Home</a></li>
-					<li><a href="/schedule">Schedule</a></li>
-					<li><a href="/history">History</a></li>
-					<li><a class="dropdown-button" href="#!" data-activates="dropdown4">Notable<i class="material-icons right">arrow_drop_down</i></a></li>
-					<li><a href="/swag">Swag</a></li>
-					<!-- Dropdown Trigger -->
-					<li><a class="dropdown-button" href="#!" data-activates="dropdown1">More To Do<i class="material-icons right">arrow_drop_down</i></a></li>
-				</ul>
+
+				<ul id="slide-out" class="side-nav">
+		      <li><a href="#!">First Sidebar Link</a></li>
+		      <li><a href="#!">Second Sidebar Link</a></li>
+		      <li class="no-padding">
+		        <ul class="collapsible collapsible-accordion">
+		          <li>
+		            <a class="collapsible-header">Dropdown<i class="mdi-navigation-arrow-drop-down"></i></a>
+		            <div class="collapsible-body">
+		              <ul>
+										<li><a href="/">Home</a></li>
+										<li><a href="/schedule">Schedule</a></li>
+										<li><a href="/history">History</a></li>
+										<li><a class="dropdown-button" href="#!" data-activates="dropdown1">Notable<i class="material-icons right">arrow_drop_down</i></a></li>
+											<li><a href="/notable/people">Notable People</a></li>
+											<li><a href="/notable/places">Notable Places</a></li>
+											<li><a href="/notable/businesses">Notable Businesses</a></li>
+										<li><a href="/swag">Swag</a></li>
+										<li><a class="dropdown-button" href="#!" data-activates="dropdown2">More To Do<i class="material-icons right">arrow_drop_down</i></a></li>
+											<li><a href="/tour/downtown">Downtown Tour</a></li>
+											<li><a href="/tour/driving">Driving Tour</a></li>
+											<li><a href="/tour/virtual">Virtual Tour</a></li>
+		              </ul>
+		            </div>
+		          </li>
+		        </ul>
+		      </li>
+		    </ul>
 				<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
 			</div>
 		</nav>

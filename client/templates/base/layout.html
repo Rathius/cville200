@@ -1,16 +1,18 @@
 <body>
-	
+
 	{{renderPage}}
 
 </body>
 
 <template name="layout">
-	
+
 	{{> nav}}
 	<main>
 		{{> yield}}
 	</main>
 	{{> footer}}
-	
+
+	<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0lS1x6qL34Q9ZskFmkPG_a7loAgc2jjM&signed_in=true&callback=initMap"
+        async defer></script>-->
 
 </template>
